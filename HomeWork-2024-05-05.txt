@@ -1,0 +1,183 @@
+-1. For Thirsday download and install NodeJS 
+     (possibly, as administrator): https://nodejs.org/en/download/ 
+     Basic installation, just Next->Next->Next
+
+0. Projects 
+   00-portfolio - get some ideas, what do you want 
+   00-tic-tac-toe - 30.04.2024
+   01-is-it-a-prime-number - 30.04.2024
+   02-css-explanator - 30.04.2024
+   03-questionnaire - 8.05.2024
+
+   Optional Projects:
+      - Canvas "Breakout Game"
+      - Dreidel
+      - "Endless Dangers" - see the description below
+
+1. indexOf() + while challenge. Write function findAll(),
+   that gets a word and a letter.
+   Go over the word and get all the locations of the given letter 
+   and return them in an array. 
+
+   For example
+
+   findAll('archaebacteria','a') returns [0,4,7,13]
+   findAll('abracadabra','a') returns [0,3,5,7,10]
+   findAll('encyclopedy','m') returns []
+   findAll('encyclopedy','c') returns [2,4]
+   findAll('encyclopedy','c') returns [2,4]
+   findAll('error','e') returns [0]
+
+   Check the function with all the above pairs of word and letter.
+
+2. Dani plays the game "Endless Dangers". 
+   - from the "usual" HW - you could make it a project.
+   (Math.random(),forEach(),functions)
+
+   At the beginning each player has some amount of bullets and several grenades.
+   Example:
+   var ammoDani = 140
+   var grDani = 4 
+   var daniIsAlive = true
+
+   There could be two dangers for the player in the game:
+
+   1) "Dragon attack" - dragon could be killed by 4 bullets or 1 grenade
+
+   2) "Hostile armored carriage attack" - armored carriage could be destroyed
+      by 2 grenades with probability 1/2
+
+   Example of game scenario:
+
+      1st danger - the player is threatened by 6 dragons
+
+      2nd danger - the player is threatened by 4 dragons
+
+      3rd danger - the player is threatened by hostile armored carriage
+
+      etc.
+
+   Create function dragons(dragonNum) - it gets the amount of dragons. 
+   The function subtracts bullets or/and grenades of the player,
+   and if there was anough to win all the dragons, returns true
+   (anounces that the player is alive), otherwise - false. 
+
+   Create function hostileCarriage() - 
+   it does not get parameters. The function subtracts the number 
+   of the player grenades by 2 (if they has) and runs the function
+   Math.random().
+   If there was not enough grenades or the function  Math.random()
+   returned number less than 0.5 - the carriage is not destroyed
+   and the player dies. 
+   The function returns the player's state.
+
+   Create function gameScenario() - it gets or the string "dragons"
+   and a number, or the string "carriage" and null.
+   In the first case it runs the function "dragons()" and passes into it 
+   the number of the dragons.
+
+   In the second case it runs the function hostileCarriage(). 
+   
+   Before playing the next part of the scenario the function gameScenario 
+   checks if the status of the player is "alive" or the game has ended.
+
+   Create array gameFlow, for example,
+   var gameFlow = ['dragons','dragons','carriage','dragons','carriage','carriage'];
+
+   Go over it with "forEach" cycle and run for each element gameScenario()
+   with an appropriate parameter ('dragons' or 'carriage').
+   In the case of "dragons" the cycle should run Math.random()
+   and get the number of the dragons from 0 and till the maximum (for example, till 7)
+   - this before running gameScenario("dragons",...).
+
+   This way the player will go through different gaming scenarios.
+
+   Optionally: make a project from this exercise. 
+     Illustrate the game by DOM elements.
+
+
+3. createElement() practice. Use js loops, etc. to create 
+   nobody-s-perfect-porsche.jpg poster.
+
+4. ForEach - use the third parameter! that forEach passes to it's callback function
+    const colors1 = ['red','navy','green','black','yellow','bordo']
+    const colors2 = ['pink','blue','lightgreen','grey','lemon','magenta']
+    a) Go over "colors1" and make them upper case.
+    b) Go over "colors1" and exchange each color by appropriate
+       color from "colors2".
+    c) Go over "colors1" and exchange each color by appropriate
+       color from "colors2" but only for the even indices.
+
+5. Use addEventListener for the event mouseover in the way,
+   that when the cursor goes over DIV, this DIV shows some text.
+
+   You've got 3 DIVs. Use event.target to show the text in 
+   the appropriate DIV.
+   You've got array with several samples of text, like:
+
+   const txtAr = ['Broken cryons still color',`I'm not weird. I'm limited edition`,
+   `An apple a day keeps the doctor away, if you throw it hard enough`,
+   `If money doesn't grow on trees why banks have branches?`,
+   `Of course I talk to myself. Sometimes I need expert advice.`,
+   `A diamond is just a lump of coal that did well under pressure.`,
+   `Somebody said today that I'm lazy. I nearly answered him.`,
+   `I used to think I was indecisive. But now I'm not so sure.`,
+   `Alcohol doesn’t solve any problems. But neither does milk.`]
+
+   Mode1: Each time we see in the DIV some random text from the array.
+
+   Mode2: Challenge. Each time we see in the DIV 
+   the next (not random!) text - 
+   according to it's order in the array.
+
+6. Timers. Use input for seconds and button to start.
+
+   The button on "click" should get the input number
+   of seconds and to start counting down and showing 
+   seconds in the secondDiv till it gets to 
+   the zeo number of seconds, then stop.
+
+   CHALLENGE: After the "start" remove the listener 
+   from the button and after the count has stopped, 
+   add it again.
+
+7. Ternary operator inside ternary operator + map().
+
+   const fruits = ['CLEMANTINA','CHERRY','WaterMelon','melon','apple']
+
+   Create new array fruitCase, that for the fruits
+    in upper case will contain 'upper', for the fruits
+   in lower case should contain 'lower', and for 
+   others - 'neither'
+   The result should be: ['upper','upper','neither','lower','lower']
+   Use  nested ternary operator, try without {}.
+
+8. <!-- Timers Challenge. Create an app with the next properties:
+   a) User enters a maximum(positive integer), step(small positive integer), interval time (in milliseconds) and sleep time (in milliseconds)
+   b) The app starts showing numbers, starting from 0 and making "steps"
+   c) The time between showing numbers is the "interval time"
+   d) When getting to the maximum, the app starts showing numbers in the reverse order, from the maximum
+   e) While showing numbers, the app waits for the period of the "sleep time" and changes the color of the body (once)
+
+   More Challenge
+
+   f) There is a button that enables the user to stop and to revert showing order of numbers by click, so showing the numbers stops and reverses at the maximum or by click
+   g) Showing numbers goes up and down up and down (by the rules of "f)" ) - and can be stopped only by another button
+   h) When changing direction - each time the app waits for the period of the "sleep time" and changes the color of the body
+   i) The numbers are sit in a DIV that is positioned ABSOLUTE and it's LEFT or RIGHT is changed in accordance with the number value (you can wait with "i" for tomorrow - we study position ABSOLUTE tomorrow)
+ -->
+    <label for="max">Enter maximal number:</label>
+    <input type="number" id="max" value="17">
+    <label for="step">Enter step:</label>
+    <input type="number" id="step" value="3">
+    <label for="interval">Enter interval time:</label>
+    <input type="number" id="interval" value="2000">
+    <label for="sleep">Enter sleep time:</label>
+    <input type="number" id="sleep" value="4000">
+    <br><br>
+    <button class="btn start">Start</button>
+    <br><br>
+    <div class="output">0</div>
+
+
+
