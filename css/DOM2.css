@@ -1,0 +1,61 @@
+body {
+    font-size: 2rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+button {
+    padding: 7px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.blue {
+    background: blue;
+    color: whitesmoke;
+    transition: all 0.4s;
+}
+
+.blue:hover {
+    background:rgb(103, 103, 248);
+}
+
+.blue:active {
+    background:rgb(103, 103, 248);
+    transform: scale(1.1);
+}
+
+.green {
+    background: green;
+    color: lemonchiffon;
+}
+
+.yellow {
+    background: yellow;
+    color: purple;
+}
+
+.salmon {
+    background: salmon;
+    color: navy;
+}
+
+
+
+#out1 {
+
+    margin: 20px;
+    width: 400px;
+    height: 75px;
+    border: 3px solid green;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}

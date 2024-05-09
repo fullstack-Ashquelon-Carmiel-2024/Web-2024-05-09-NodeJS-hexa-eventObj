@@ -1,0 +1,182 @@
+
+3. Continue timers.js that we've created.
+
+   No listeners! 
+   When the script is uploading,
+   sleep for the  ? of the seconds from 
+   the input and after the sleep 
+   write in the output "Slept well for ? seconds"
+
+   We'll continue tomorrow with more timers.
+
+2. Use more-events.css and more-events.html
+
+        a) Create function showEvent, which shows in the output  statements like this
+           "This is a <event-type> event. Value = <value>"
+
+           The function should show the whole event on the console too.
+
+            For <event-type> use event propety "type",
+            for <value> use event.target property "value".
+
+        b) Add listeners that will run this function for the event "input" on userInp,
+                for the event "change" on userPass,
+                for the event "blur" on birthYearInp
+
+        c) Create function changeColor that exchanges class "blue" by class "red" 
+           of the target element if it has class "blue", and vice versa.
+
+        d) Add listeners that will run this function for the event "click" on 
+           btn and btn1
+
+3. forEach() inside map(). 
+
+   const numAr = [[-7.65, 1.8, 34.5, -0.44], [1023, 55, -3.45, 1.2, 0.2], 
+                  [0.01, 0.03, -0.05, 88.1, 0.2], [2034, 3.01], [166],
+                  [-166, -5.4, -76]]
+
+   Go over numAr elements and sum all their numbers. 
+   Create new array of these sums.
+
+5.   
+const foods = ['pizza','pasta','mac-and-cheese','falafel','hummus','jachnun','sabih']
+    const drinks = ['wine','beer','martini','water','wodka','tea','cola']
+
+    Create new array "meals", that will contain objects with properties 
+    "food" and "drink" , like [{food: 'pizza',drink: 'wine'},
+                               {food: 'pasta',drink: 'beer'},
+                               {food: 'mac-and-cheese', drink: 'martini'},
+                                ...]
+    HINT at the end of the file.
+
+6. Loop inside loop. Write a function "memorizeOrder" that gets 
+   as an argument some array that should be 
+   learnt by heart in accordance with the order of its members.
+
+   For example. The user have to learn by heart the order of the planets.
+   The function gets the array
+   planets = ['Mercury','Venus','Earth','Mars','Jupiter','Saturn','Uranus','Neptune']
+
+   Example:
+   the program asks "Which planet is number 1?" 
+   It continues to ask the same question until the player says "Mercury".
+   Now the program asks "Which planet is number 2?" 
+   And continues to ask this question until the user says "Venus".
+
+   You may envelope the whole program in the outer loop that will 
+   repeat the whole process n times.
+
+7. input-integer-validation.html. 
+   Do not change <input> type.
+   Allow only integers that consist of 
+    7, 8 or 9, like 78889779
+   The HINT is at the end of the file.
+
+
+HINT for 4 c: Inside setExcellentGrades use student3.grades.filter()
+
+HINT for 5: use map()
+
+HINT for 7.
+a) Use "input" event
+b) Check only the last symbol, like
+
+    if (str[str.length-1] !== '7.' ...
+
+c) If the last character is wrong, don't allow
+   only the last character, like
+
+        input.value = str.substring(0,str.length-1);
+
+2. NodeJS.
+
+Example of reading from file synchronously:
+const txtInput = fs.readFileSync('text-to-read.txt','utf8');
+
+The first parameter is the file name, the second is encoding.
+The function fs.readFileSync() returns the text from the file.
+
+a) Read from the file input.txt into a variable 
+b) Write the text from the variable into new-text.txt
+c) Write the same text again into new-text.txt
+d) Check that the text appears only once in new-text.txt
+e) Write the text from the variable into text-again.txt
+f) Use fs.appendFileSync() to really append the text to text-again.txt
+g) Check that the text appears twice now in text-again.txt
+h) Read the text again from any of the files, but without encoding
+i) Write the text that was read at h) into without-utf8.txt
+j) How the text appears in without-utf8.txt? 
+
+
+7.     <!-- Timers . Create an app with the next properties:
+   a) User enters a maximum(positive integer), step(small positive integer), interval time (in milliseconds) and sleep time (in milliseconds)
+   b) The app starts showing numbers, starting from 0 and making "steps"
+   c) The time between showing numbers is the "interval time"
+   d) When getting to the maximum, the app starts showing numbers in the reverse order, from the maximum
+   e) While showing numbers, the app waits for the period of the "sleep time" and changes the color of the body (once)
+
+   More Challenge
+
+   f) There is a button that enables the user to stop and to revert showing order of numbers by click, so showing the numbers stops and reverses at the maximum or by click
+   g) Showing numbers goes up and down up and down (by the rules of "f)" ) - and can be stopped only by another button
+   h) When changing direction - each time the app waits for the period of the "sleep time" and changes the color of the body
+   i) The numbers are sit in a DIV that is positioned ABSOLUTE and it's LEFT or RIGHT is changed in accordance with the number value (you can wait with "i" for tomorrow - we study position ABSOLUTE tomorrow)
+ -->
+    <label for="max">Enter maximal number:</label>
+    <input type="number" id="max" value="17">
+    <label for="step">Enter step:</label>
+    <input type="number" id="step" value="3">
+    <label for="interval">Enter interval time:</label>
+    <input type="number" id="interval" value="2000">
+    <label for="sleep">Enter sleep time:</label>
+    <input type="number" id="sleep" value="4000">
+    <br><br>
+    <button class="btn start">Start</button>
+    <br><br>
+    <div class="output">0</div>
+
+8. Async functions.
+
+   Use dir "to-read".
+   a) Use fs.readdir() to read the list of the filenames into array.
+   b) Create new dir "to-write".
+   Use the next example to recreate it if needed:
+
+   fs.mkdir(dirIn,(err)=>{
+    
+    if (err) {
+        
+        if (err.message.search('file already exists')>-1) {
+            fs.rmdir(dirIn,{recursive:true},(err)=>{
+                if (err) console.log(err)
+                else console.log('rmdir succeeded ☠️')
+            })
+        } else {
+            console.log(err)
+        }
+
+   c) Go over the array of the filenames, read them
+   and create them inside the dir "to-write"
+
+3. Train objects and arrays. 
+   Create 4 objects - of furniture pieces.
+      Each one should have name, height (in meters)
+      and method that converts the height from 
+      meters to centimeters.
+      Put all the objects into an array.
+      Go with forEach over the array and convert
+      the height of each object into centimeters.
+
+4. Interesting use of switch.
+   a) Check the interesting use of switch at
+      switch-interesting-use.html and switch-interesting-use.js
+
+   b) Now yourself use switch in the same way.
+      Create function that gets person's age and answers for somebody who is 
+      6 years old: You can study 
+      12 years old: You can study, work
+      17 years old: You can study, work, drive a car
+      18 years old: You can study, work, drive a car, drink alcohol
+      60 years old: You can study, work, drive a car, drink alcohol, study Kabbalah
+      
+      Otherwise: Wrong input
