@@ -60,3 +60,11 @@ $ git log - see all the commits
 
 $ git push
 
+----------------------------------
+path
+----------------------------------
+. - the same directory
+./ - to get a file in the same directory
+.. - parent directory
+
+
