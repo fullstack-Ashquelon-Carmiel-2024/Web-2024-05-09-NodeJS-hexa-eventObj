@@ -12,6 +12,15 @@ button {
     cursor: pointer;
 }
 
+.container {
+    display: flex;
+}
+
+.div {
+    height: 100px;
+    width: 125px;
+}
+
 .blue {
     background: blue;
     color: whitesmoke;

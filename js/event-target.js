@@ -6,6 +6,8 @@ const out = document.querySelector('.out');
  * with class ".btn"
  */
 
+const btns = document.querySelectorAll('.btn');
+
 /**
  * MISSION2:
  * Create function showLetter(), that gets event
@@ -13,11 +15,23 @@ const out = document.querySelector('.out');
  * event.target to add it's letter to the innerText of "out"
  */
 
+function showLetter(e) {
+
+    out.innerText += e.target.innerText;
+
+}
+
 /**
  * MISSION3:
  * Go with forEach over btns and add eventListener
  * on "click" event for each button
  */
+
+
+
+btns.forEach(btn => btn.addEventListener('click',showLetter))
+/* btns.forEach(btn => 
+    btn.addEventListener('click',(e) => out.innerText += e.target.innerText)) */
 
 
 
